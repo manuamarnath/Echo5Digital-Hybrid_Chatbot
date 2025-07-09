@@ -156,8 +156,8 @@ function echo5_chatbot_hybrid_api_settings_page() {
     <div class="wrap">
         <h1>Echo5 Chatbot API Settings</h1>
         <form method="post" action="options.php">
-            <?php settings_fields('echo5_chatbot_hybrid_api'); ?>
-            <?php do_settings_sections('echo5_chatbot_hybrid_api'); ?>
+            <?php settings_fields('echo5_chatbot_hybrid_settings'); ?>
+            <?php do_settings_sections('echo5_chatbot_hybrid_settings'); ?>
             <table class="form-table">
                 <tr valign="top">
                     <th scope="row">Backend URL</th>
@@ -239,10 +239,6 @@ function echo5_chatbot_hybrid_api_settings_page() {
 }
 
 add_action('admin_init', function() {
-    // API settings in their own group
-    register_setting('echo5_chatbot_hybrid_api', 'echo5_chatbot_hybrid_openai_key');
-    register_setting('echo5_chatbot_hybrid_api', 'echo5_chatbot_hybrid_backend_url');
-    // Training/FAQ settings
     register_setting('echo5_chatbot_hybrid_settings', 'echo5_chatbot_hybrid_system_prompt');
     register_setting('echo5_chatbot_hybrid_settings', 'echo5_chatbot_hybrid_faq');
     // Appearance/Customize settings
